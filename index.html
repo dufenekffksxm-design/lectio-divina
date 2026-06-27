@@ -14,12 +14,14 @@
 <meta name="application-name" content="렉시오 디비나">
 <meta name="description" content="렉시오 디비나 — 말씀과 침묵의 기도">
 
-<!-- PWA Icons (inline SVG as data URI) -->
-<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%23f0e7d6'/%3E%3Ctext x='256' y='250' text-anchor='middle' font-size='200'%3E🌿%3C/text%3E%3Ctext x='256' y='400' text-anchor='middle' font-size='62' fill='%235a4a32' font-family='serif' font-weight='600'%3E렉시오%3C/text%3E%3C/svg%3E">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Crect width='512' height='512' rx='96' fill='%23f0e7d6'/%3E%3Ctext x='256' y='250' text-anchor='middle' font-size='200'%3E🌿%3C/text%3E%3Ctext x='256' y='400' text-anchor='middle' font-size='62' fill='%235a4a32' font-family='serif' font-weight='600'%3E렉시오%3C/text%3E%3C/svg%3E">
+<!-- PWA Icons (real PNG files for iOS compatibility) -->
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 
 <!-- Inline Web App Manifest -->
-<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22%EB%A0%89%EC%8B%9C%EC%98%A4%20%EB%94%94%EB%B9%84%EB%82%98%22%2C%22short_name%22%3A%22%EB%A0%89%EC%8B%9C%EC%98%A4%22%2C%22description%22%3A%22%EB%A7%90%EC%94%80%EA%B3%BC%20%EC%B9%A8%EB%AC%B5%EC%9D%98%20%EA%B8%B0%EB%8F%84%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23f7f2e9%22%2C%22theme_color%22%3A%22%23f7f2e9%22%2C%22categories%22%3A%5B%22lifestyle%22%5D%7D">
+<link rel="manifest" href="data:application/json,%7B%22name%22%3A%22%EB%A0%89%EC%8B%9C%EC%98%A4%20%EB%94%94%EB%B9%84%EB%82%98%22%2C%22short_name%22%3A%22%EB%A0%89%EC%8B%9C%EC%98%A4%22%2C%22description%22%3A%22%EB%A7%90%EC%94%80%EA%B3%BC%20%EC%B9%A8%EB%AC%B5%EC%9D%98%20%EA%B8%B0%EB%8F%84%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22portrait%22%2C%22background_color%22%3A%22%23f7f2e9%22%2C%22theme_color%22%3A%22%23f7f2e9%22%2C%22categories%22%3A%5B%22lifestyle%22%5D%2C%22icons%22%3A%5B%7B%22src%22%3A%22icon-192.png%22%2C%22sizes%22%3A%22192x192%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%22%7D%2C%7B%22src%22%3A%22icon-512.png%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fpng%22%2C%22purpose%22%3A%22any%20maskable%22%7D%5D%7D">
 
 <!-- Splash screen styles for iOS -->
 <style id="pwa-splash">
@@ -2495,7 +2497,7 @@ document.getElementById('cpNatureToggle').addEventListener('change', saveSetting
 // ========== PWA: SERVICE WORKER (inline) ==========
 if ('serviceWorker' in navigator) {
   const swCode = `
-    const CACHE_NAME = 'lectio-v14';
+    const CACHE_NAME = 'lectio-v16';
     const ASSETS = [self.location.href];
 
     self.addEventListener('install', e => {
